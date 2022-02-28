@@ -1,0 +1,10 @@
+.colored
+  h2 Введите ссылку
+  = form_for :qr_code, url: qr_code_path do |f|
+    .field
+      = f.label :link, 'Ссылка'
+      = f.text_field :link, required: true
+    .field
+      = f.label :name, 'Название'
+      = f.text_field :name
+    .submit = f.submit 'Сгенерировать QR Code', class: 'button expanded', required: true
